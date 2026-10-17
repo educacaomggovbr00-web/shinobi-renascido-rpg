@@ -1,156 +1,65 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#11151d" />
-  <meta name="description" content="RPG de texto não oficial ambientado no início de Naruto Clássico. Suas decisões mudam a história." />
-  <title>Shinobi Renascido | RPG de Naruto</title>
-  <style>
-:root{color-scheme:dark;--bg:#10131a;--panel:#151a22;--line:#29303a;--ink:#f0ebdf;--muted:#a9a8a3;--orange:#ef8b4c;--accent:#f4b774;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}button,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:wait}.app{max-width:1500px;margin:auto;min-height:100svh;display:grid;grid-template-columns:288px minmax(0,1fr)}.panel{padding:28px 24px;background:#161b23;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:22px}.identity{display:flex;align-items:center;gap:12px}.sigil{height:44px;width:44px;border-radius:50%;background:#8e392d;color:#ffe1b7;display:grid;place-items:center;border:2px solid #cb7157;font-size:22px;font-weight:800}.micro{font-size:10px;font-weight:900;letter-spacing:2.1px;color:var(--orange)}.identity strong{font-size:13px;letter-spacing:1px;white-space:nowrap}.character{display:flex;gap:13px;align-items:center;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.avatar{display:grid;place-items:center;height:61px;width:61px;min-width:61px;background:radial-gradient(circle at 30% 20%,#5b3930,#281e22);border:1px solid #7b4840;border-radius:14px;color:#f3b783;font-size:30px}.small-note{font-size:10px;color:#a5a6a8;letter-spacing:1.4px}.character h2{font-family:Georgia,serif;font-size:20px;margin:5px 0}.character p{font-size:12px;margin:0;color:#c1b9ae}.panel-section h3{font-size:10px;letter-spacing:1.8px;color:#edbe94;margin:0 0 12px}.stats{display:grid;gap:11px}.stat{display:flex;justify-content:space-between;border-bottom:1px solid #2b313a;padding-bottom:9px;gap:10px;font-size:12px}.stat span{color:#acaeaf}.stat b{font-weight:700;color:#f1e6d3;text-align:right}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{font-size:11px;color:#e2d5c3;padding:7px 9px;border:1px solid #3d3c3c;border-radius:7px;background:#20262f}.chip.empty{color:#989a9d;border-style:dashed}.rules p{font-size:11px;line-height:1.6;color:#a4a7ad}.subtle{margin-top:auto;width:100%;padding:12px;background:transparent;border:1px solid #48424a;border-radius:9px;color:#cfb29b}.disclaimer{font-size:10px;color:#878b91;line-height:1.5}.game{min-width:0;padding:30px clamp(16px,5vw,68px) 30px;max-width:1080px;width:100%;margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:15px}.topbar-left{display:flex;align-items:center;gap:10px}h1{font:normal clamp(23px,3vw,37px)/1.25 Georgia,serif;margin:9px 0 0}.live-dot{display:inline-block;height:7px;width:7px;border-radius:50%;background:var(--orange);margin-right:5px}.mode{font-size:10px;font-weight:800;letter-spacing:1px;border:1px solid #594738;color:#f4af7a;padding:10px 12px;border-radius:40px;white-space:nowrap}.storyline{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding:25px 0 13px;font-size:10px;font-weight:900;letter-spacing:1.6px;color:#a6a8aa}.flame{color:#e7814f}.prologue{margin-top:23px;min-height:230px;position:relative;overflow:hidden;border:1px solid #604336;border-radius:13px;padding:28px 30px;background:linear-gradient(115deg,rgba(32,30,32,.96) 15%,rgba(62,38,31,.84) 68%,rgba(89,48,35,.7)),#332a27}.prologue>*:not(.art-village){position:relative;z-index:2}.arc{color:#f5b77f;font-size:10px;font-weight:900;letter-spacing:2px}.prologue h2{font:normal clamp(26px,3.8vw,45px)/1.12 Georgia,serif;max-width:560px;margin:22px 0 14px}.prologue em{color:#f3b77f;font-style:normal}.prologue p{font-size:12px;color:#cdb5a4;margin:0}.art-village{position:absolute;right:-5px;bottom:0;width:45%;height:100%;opacity:.55;pointer-events:none}.sun{position:absolute;background:#ec965e;border-radius:50%;width:130px;height:130px;right:19%;top:12%;filter:blur(1px)}.mountain{position:absolute;width:115%;height:68%;bottom:-11%;right:-14%;clip-path:polygon(0 100%,35% 12%,58% 58%,76% 12%,100% 100%)}.mountain.back{background:#794a3f;transform:translateY(-25px)}.mountain.front{background:#332e32;clip-path:polygon(0 100%,25% 48%,46% 100%,65% 22%,100% 100%)}.roof{position:absolute;background:#161c24;bottom:0;height:55px;width:120px;clip-path:polygon(0 30%,50% 0,100% 30%,100% 100%,0 100%)}.roof.one{right:8%;height:75px}.roof.two{right:47%;height:56px}.roof.three{right:-12%;height:100px}.leaf{position:absolute;color:#ffc48a;font-size:28px}.leaf-one{right:65%;top:20%}.leaf-two{right:7%;top:18%}.conversation{margin:24px 0}.messages{display:flex;flex-direction:column;gap:15px;min-height:170px;max-height:48vh;overflow-y:auto;scrollbar-color:#56505a transparent;padding:3px}.message{border-radius:11px;padding:19px 21px;line-height:1.8;white-space:pre-wrap;font-size:14px}.message.assistant{border:1px solid #363d49;background:#1c222b}.message.user{background:#43312b;border:1px solid #6a4737;align-self:flex-end;max-width:89%}.who{font-size:10px;letter-spacing:1.6px;font-weight:900;color:#edac79;margin-bottom:9px;text-transform:uppercase}.turn-meta{font-size:10px;color:#8e959e;margin-top:10px}.controls{border-top:1px solid var(--line);padding-top:20px}.prompt-label,form label{display:block;font-size:10px;letter-spacing:1.7px;font-weight:900;color:#c8a484;margin-bottom:12px}.choices{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}.choices button{border:1px solid #4c4946;background:#26282d;border-radius:8px;padding:11px 12px;color:#ebd4bb;font-size:11px}.choices button:hover{background:#47332a}.input-row{display:flex;align-items:stretch;gap:10px}.input-row textarea{width:100%;min-height:78px;resize:vertical;background:#1a2029;color:#f1e7d8;border:1px solid #54515a;border-radius:9px;padding:14px;outline:0;line-height:1.5}.input-row textarea:focus{border-color:#efa873;box-shadow:0 0 0 2px #bb6a3128}.input-row button{min-width:106px;background:linear-gradient(135deg,#f2ab6d,#dc7e50);border:0;border-radius:9px;color:#271a19;font-size:11px;font-weight:900;letter-spacing:.7px;padding:10px;display:flex;align-items:center;justify-content:center;gap:7px}.help{font-size:11px;color:#989ba1}.menu-button{display:none;background:#272d37;color:#efceab;border:1px solid #49413e;border-radius:7px;padding:8px 11px}@media(max-width:850px){.app{display:block}.panel{display:none;position:fixed;z-index:10;inset:0 14% 0 0;overflow:auto;box-shadow:18px 0 60px #000a}.panel.open{display:flex}.game{padding:20px 15px}.menu-button{display:block}.prologue{padding:23px 20px;min-height:220px}.art-village{width:56%}.storyline span:nth-child(2){display:none}.mode{font-size:9px;padding:8px}.choices{gap:7px}.choices button{padding:10px;font-size:11px}.message{padding:14px;font-size:13px}.messages{max-height:46vh}.prologue h2{font-size:29px}.prologue p{max-width:260px}.input-row button{min-width:75px;flex-direction:column}.identity strong{font-size:12px}}@media(prefers-reduced-motion:no-preference){.live-dot{animation:blink 2s ease-in-out infinite}@keyframes blink{50%{opacity:.32}}}
-
-</style>
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#191919">
+  <meta name="description" content="RPG de texto interativo de Naruto Clássico, narrado em formato de conversa.">
+  <title>Shinobi Renascido · RPG de texto</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
 </head>
 <body>
 <div class="app">
-  <aside class="panel" id="panel">
-    <div class="identity"><div class="sigil" aria-hidden="true">う</div><div><div class="micro">CRÔNICAS DE KONOHA</div><strong>SHINOBI RENASCIDO</strong></div></div>
-    <div class="character"><span class="avatar" aria-hidden="true">忍</span><div><span class="small-note">PERSONAGEM</span><h2 id="player-name">Henrique Uchiha</h2><p id="player-origin">12 anos • Clã Uchiha</p></div></div>
-    <div class="panel-section"><h3>ESTADO ATUAL</h3><div id="stats" class="stats"></div></div>
-    <div class="panel-section"><h3>TÉCNICAS OBSERVADAS</h3><div id="techniques" class="chips"></div></div>
-    <div class="panel-section"><h3>MOCHILA</h3><div id="inventory" class="chips"></div></div>
-    <div class="panel-section rules"><h3>REGRAS DO MUNDO</h3><p>Você decide todas as ações e falas de Henrique.</p><p>Uma observação basta para aprender uma técnica — executá-la ainda consome chakra.</p><p>Rick-138 possui inteligência extraordinária, mas desconhece os acontecimentos e as pessoas deste mundo.</p></div>
-    <button id="reset" class="subtle">↻ Reiniciar aventura</button>
-    <small class="disclaimer">Projeto de fã, não oficial. Salvo somente neste dispositivo.</small>
-  </aside>
-  <main class="game">
-    <header class="topbar"><div class="topbar-left"><button id="menu" class="menu-button" aria-controls="panel" aria-expanded="false" aria-label="Abrir ficha">☰</button><div><div class="micro"><span class="live-dot"></span> EPISÓDIO 01 • NARUTO CLÁSSICO</div><h1>A manhã da Academia</h1></div></div><div id="mode" class="mode">DEMONSTRAÇÃO</div></header>
-    <div class="storyline"><span id="meta">KONOHA • DIA 1 • 07:05</span><span>VONTADE DO FOGO <span class="flame">◆</span></span></div>
-    <section class="prologue" aria-label="Contexto da aventura"><div class="arc">PRÓLOGO // UM NOVO COMEÇO</div><h2>O mundo não conhece<br/><em>seu verdadeiro potencial.</em></h2><p>Uma vida simples. Uma mente impossível. Um único olhar para aprender.</p><div class="art-village" aria-hidden="true"><div class="sun"></div><div class="mountain back"></div><div class="mountain front"></div><div class="roof one"></div><div class="roof two"></div><div class="roof three"></div><div class="leaf leaf-one">✦</div><div class="leaf leaf-two">✦</div></div></section>
-    <section class="conversation" aria-label="História"><div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions text"></div></section>
-    <section class="controls" aria-label="Escolhas e ações"><span class="prompt-label">SUGESTÕES • OU ESCREVA O QUE QUISER</span><div class="choices"><button type="button" data-action="Conversar com meus pais sobre o dia de hoje.">Conversar com meus pais</button><button type="button" data-action="Observar o ambiente e a rotina da minha casa.">Observar a casa</button><button type="button" data-action="Perguntar aos meus pais sobre a Academia Ninja.">Perguntar sobre a Academia</button></div>
-    <form id="composer"><label for="action">O QUE HENRIQUE FAZ OU DIZ?</label><div class="input-row"><textarea id="action" maxlength="900" rows="2" placeholder="Ex.: Eu olho para minha mãe e pergunto..." required></textarea><button id="send" type="submit" aria-label="Enviar ação"><span>ENVIAR</span><span aria-hidden="true">➜</span></button></div><p class="help">Você pode escrever qualquer coisa. No modo demonstração, o narrador tem respostas limitadas.</p></form></section>
+  <header class="topbar">
+    <button id="menu" class="icon-button" type="button" aria-label="Abrir ficha de Henrique" aria-controls="panel" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M9 4v16"/></svg>
+    </button>
+    <div class="heading">
+      <div class="title">Shinobi Renascido <span aria-hidden="true">⌄</span></div>
+      <div id="meta" class="subtitle">Konoha · Dia 1 · 07:05</div>
+    </div>
+    <button class="mode" id="mode" type="button" aria-label="Informações do modo de jogo">Demo</button>
+  </header>
+
+  <main id="chat" class="chat" aria-label="Conversa com o narrador" tabindex="-1">
+    <div class="chat-inner">
+      <div class="chapter"><span class="chapter-mark">🍥</span><span>EPISÓDIO 1 · A MANHÃ DA ACADEMIA</span></div>
+      <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div id="typing" class="typing" aria-live="polite" hidden><span class="narrator-avatar">忍</span><span class="typing-dots"><i></i><i></i><i></i></span><span class="sr-only">O narrador está respondendo</span></div>
+    </div>
   </main>
+
+  <footer class="composer-dock">
+    <div class="composer-wrap">
+      <div id="suggestions" class="suggestions" aria-label="Sugestões de ações">
+        <button type="button" data-action="Conversar com meus pais sobre o dia de hoje.">Conversar com meus pais</button>
+        <button type="button" data-action="Observar o ambiente e a rotina da minha casa.">Observar a casa</button>
+        <button type="button" data-action="Perguntar aos meus pais sobre a Academia Ninja.">Perguntar sobre a Academia</button>
+      </div>
+      <form id="composer" aria-label="Enviar ação ao narrador">
+        <label for="action" class="sr-only">O que Henrique faz ou diz?</label>
+        <textarea id="action" rows="1" maxlength="1200" placeholder="O que Henrique faz ou diz?" autocomplete="off" required></textarea>
+        <button id="send" type="submit" aria-label="Enviar mensagem" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+        </button>
+      </form>
+      <p class="composer-note">Você controla Henrique. O narrador controla o mundo.</p>
+    </div>
+  </footer>
 </div>
-<script>
-// Regras do jogo: estado autoritativo separado do texto narrativo.
-const SAVE_KEY = 'shinobi-renascido-save-v2';
-const START_SCENE = `Konoha. Início da manhã. A luz entra pelas frestas da janela de uma casa pequena, numa rua afastada do centro da Vila da Folha. O cheiro de arroz recém-cozido ocupa a cozinha.\n\nSeu pai adotivo, Daichi, remenda uma sandália de trabalho na mesa. Sua mãe adotiva, Hana, divide a comida em três tigelas. O dinheiro da semana é pouco, e a inscrição na Academia Ninja é assunto frequente. Os dois criaram Henrique desde pequeno, mas há perguntas sobre sua origem Uchiha que ainda não sabem responder.\n\nHana pousa uma tigela e olha em sua direção. “Henrique, você queria conversar com a gente antes de sair?” Daichi interrompe o trabalho para ouvir.\n\nO que você faz ou diz?`;
-const INITIAL = () => ({
-  schema: 2,
-  hero: {name: 'Henrique Uchiha', alias:'Rick-138', age:12, clan:'Uchiha', intellect:'Excepcional', special:'Aprende técnicas após observá-las uma vez', origin:'Criado por pais adotivos humildes em Konoha'},
-  day:1, hour:7, minute:5, location:'Casa da família • Konoha', locationKey:'home',
-  hp:100, chakra:45, chakraMax:45, stamina:90, ryo:12,
-  inventory:['Caderno usado da Academia', 'Bolsa de tecido'],
-  techniques:[], acquaintances:[], observations:[], flags:{},
-  history:[{role:'assistant',content:START_SCENE, clock:'07:05'}]
-});
-const match=(text,regex)=>regex.test(text);
-const clock=s=>String(s.hour).padStart(2,'0')+':'+String(s.minute).padStart(2,'0');
-function advance(state, minutes){
-  let total=state.hour*60+state.minute+minutes;
-  state.day+=Math.floor(total/1440);
-  total=((total%1440)+1440)%1440;
-  state.hour=Math.floor(total/60);state.minute=total%60;
-}
-function isValidSave(s){return Boolean(s && s.schema===2 && Array.isArray(s.history) && s.hero?.name==='Henrique Uchiha' && Array.isArray(s.techniques) && Array.isArray(s.inventory) && typeof s.hour==='number' && typeof s.ryo==='number');}
-const known=(state,name)=>state.techniques.some(x=>x===name);
-function learn(state,name){if(known(state,name))return false;state.techniques.push(name);return true;}
-function applyDemoAction(s,input){
- const action=input.toLocaleLowerCase('pt-BR');
- let text='';let minutes=3;
- const parents=match(action,/pais|mãe|mae|pai|hana|daichi|fam[íi]lia|conversar/);
- const aboutAcademy=match(action,/academia|aula|treinamento|professor|iruka|ninja/);
- const look=match(action,/observ|espi|olh|assisti|prestar aten|repar|examinar/);
- const use=match(action,/execut|realiz|tentar|pratic|usar|fazer|conjur|bunshin|clones?/);
- const goAcademy=match(action,/academia|escola|sal(a|ão) de aula|professor/)&&match(action,/ir |vou |sair|caminh|entr|cheg|seguir|dirig|rumo|at[eé] a/);
- const goHome=match(action,/voltar( para)? casa|retorn(ar|o)?( para)? casa|ir para casa|vou para casa|entr(ar|o)? em casa|voltar ao lar/);
- const sleep=match(action,/dormir|adormec|deitar para dormir/);
- const eat=match(action,/comer|aliment|caf[eé]|arroz|refei[çc]/);
- const timeAtStart=clock(s);
- if(sleep){minutes=480; s.stamina=Math.min(100,s.stamina+35);s.chakra=Math.min(s.chakraMax,s.chakra+15); text='O descanso ocupa várias horas. Quando a casa volta a se movimentar, sons familiares atravessam as paredes finas. Lá fora, Konoha continua sua rotina. Nada além do que você realmente fez foi decidido por você.';}
- else if(goHome){s.locationKey='home';s.location='Casa da família • Konoha';minutes=15;text='A porta da casa simples está entreaberta. O cheiro de comida caseira e o som de ferramentas vêm de dentro. Hana e Daichi seguem suas tarefas; existe espaço para uma conversa, se você quiser iniciá-la.';}
- else if(goAcademy){s.locationKey='academy';s.location='Academia Ninja • Konoha';minutes=18;s.stamina=Math.max(0,s.stamina-3);text='Os caminhos de Konoha conduzem a um prédio movimentado. Crianças da sua idade circulam perto da Academia Ninja; algumas usam bandanas de suas famílias, outras carregam cadernos gastos. Pela porta aberta vem a voz de um instrutor organizando os alunos. Você ainda não conhece os nomes de quase ninguém ali.';}
- else if(s.locationKey==='home' && parents && aboutAcademy){text='Daichi apoia a sandália sobre a mesa. “A Academia é a chance de você construir seu futuro. Mas não precisa provar nada hoje.” Hana completa: “A gente juntou o que deu para seus materiais. E quero saber como você se sente com isso.” Ambos aguardam sua resposta sem escolher por você.';}
- else if(s.locationKey==='home' && parents){text='Hana afasta a panela do fogo e se vira para ouvir. “Pode falar, Henrique.” Daichi deixa as ferramentas de lado, curioso. A preocupação com as contas é visível, mas os dois prestam atenção ao que você tem para dizer.';}
- else if(s.locationKey==='home' && look){text='O quarto tem paredes gastas, uma cama estreita e poucos objetos. Na cozinha, Hana separa o arroz enquanto Daichi examina a sola da sandália. Pela janela passam moradores indo trabalhar; bem longe, o rosto esculpido dos Hokages domina a encosta da vila. Há muita coisa que você ainda não entende sobre este lugar.';}
- else if(s.locationKey==='home' && eat){minutes=12;s.stamina=Math.min(100,s.stamina+5);text='Hana oferece uma porção modesta do café da manhã. Daichi faz as contas em silêncio, depois deixa escapar um sorriso discreto ao comentar que espera encontrar trabalho até o fim do dia.';}
- else if(s.locationKey==='academy' && look && (aboutAcademy || match(action,/jutsu|t[eé]cnica|clone|bunshin|instrutor|aluno/))){
-   const first=learn(s,'Bunshin no Jutsu');s.flags.sawBunshin=true;
-   text='Perto da sala, um instrutor demonstra uma técnica básica: ele concentra chakra, faz uma sequência de selos e uma cópia ilusória surge ao lado dele. A demonstração dura poucos segundos. Sua mente extraordinária registra o fluxo de chakra, os movimentos e a ordem exata. '+(first?'Você aprendeu **Bunshin no Jutsu** apenas observando uma vez.':'Você reconhece a mesma técnica que já havia registrado.')+' Ainda será preciso gastar chakra para executá-la. O instrutor continua a aula, sem perceber o alcance da sua compreensão.';
- }
- else if(s.locationKey==='academy' && use && match(action,/bunshin|clone|c[oó]pia/)){
-   minutes=5;
-   if(!known(s,'Bunshin no Jutsu')) text='Você ainda não observou uma demonstração completa dessa técnica. Mesmo com seu raciocínio excepcional, falta a informação visual necessária para reconstruí-la com precisão. Você pode procurar uma aula ou alguém que a execute.';
-   else if(s.chakra<7)text='Você conhece os selos e a forma correta de executar o jutsu, mas seu chakra atual não é suficiente. O limite físico permanece real.';
-   else{s.chakra-=7;s.stamina=Math.max(0,s.stamina-2);text='Os selos são reproduzidos com uma precisão inesperada. Seu chakra se organiza como na demonstração observada, e uma cópia ilusória toma forma por alguns instantes. A técnica funciona. Dois alunos próximos interrompem a conversa, surpresos com a facilidade do movimento.';}
- }
- else if(s.locationKey==='academy' && match(action,/naruto|sasuke|sakura|iruka|mizuki/)){
-    text='Há muitos estudantes e instrutores no local, mas você ainda não possui familiaridade pessoal com esse nome. Pode observar, se aproximar ou perguntar a alguém para descobrir quem é quem — sem que isso obrigue Henrique a dizer ou fazer algo.';
- }
- else if(s.locationKey==='academy' && look){text='Os alunos conversam em pequenos grupos. Um garoto de cabelo claro chama bastante atenção pelo barulho no corredor; um instrutor tenta manter a turma organizada. Os acontecimentos seguem o ritmo do dia, mas você não conhece a história dessas pessoas.';}
- else if(s.locationKey==='academy' && parents){text='Seus pais não estão aqui neste momento. Ao redor, você encontra estudantes, instrutores e visitantes. Para conversar com Hana ou Daichi, seria necessário voltar para casa ou procurá-los.';}
- else if(match(action,/invent[áa]rio|mochila|bolsa/)){text='Você verifica seus pertences: '+s.inventory.join(', ')+'. Não aparece nenhum objeto novo sem que tenha sido encontrado, recebido ou comprado.';}
- else if(match(action,/comprar|vender|dinheiro|ryo/)){text='A vila possui lojas e pequenas bancas, mas nenhuma compra ou venda é concluída automaticamente. Você tem '+s.ryo+' ryō. Descreva com quem pretende negociar e o que deseja obter.';}
- else if(match(action,/sair|explor|rua|passear|caminhar/)){s.locationKey='street';s.location='Ruas de Konoha';minutes=12;text='As ruas da Vila da Folha estão movimentadas. Lojas simples abrem suas portas, mensageiros passam depressa e famílias seguem seus afazeres. Ao fundo, você vê a encosta com os rostos dos Hokages. Pode escolher um destino ou alguém com quem conversar.';}
- else if(s.locationKey==='street' && aboutAcademy){text='O caminho até a Academia Ninja está sinalizado por placas de madeira. Crianças passam apressadas, mas ninguém parece especialmente interessado na sua presença. Você pode seguir até lá quando quiser.';}
- else{text='O ambiente reage à sua iniciativa sem escolher novas ações por você. '+(s.locationKey==='home'?'Hana e Daichi seguem suas tarefas domésticas enquanto o dia avança.':s.locationKey==='academy'?'Os alunos continuam sua rotina na Academia, e os instrutores organizam as atividades.':'Os moradores continuam trabalhando e conversando nas ruas de Konoha.')+' (Narrador demonstrativo: conecte uma API de IA no servidor para respostas livres e detalhadas.)';}
- advance(s,minutes);
- return {text:text.replaceAll('**',''),minutes,clock:clock(s),previousClock:timeAtStart};
-}
-function publicState(s){const {history,...data}=s;return data;}
 
-
-const $=id=>document.getElementById(id);
-let state;
-try{let saved=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');state=isValidSave(saved)?saved:INITIAL();}catch{state=INITIAL();}
-let busy=false;
-const fmt=n=>String(n).padStart(2,'0');
-const clock=()=>`${fmt(state.hour)}:${fmt(state.minute)}`;
-const save=()=>{try{localStorage.setItem(SAVE_KEY,JSON.stringify(state));}catch{console.warn('Salvamento local indisponível')}};
-function create(tag,cls,text){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el;}
-function render(){
- $('player-name').textContent=state.hero.name;
- $('player-origin').textContent=`${state.hero.age} anos • Clã ${state.hero.clan}`;
- $('meta').textContent=`KONOHA  •  DIA ${state.day}  •  ${clock()}  •  ${state.location}`;
- const stats=[['❤️ Saúde',`${state.hp}/100`],['🔹 Chakra',`${state.chakra}/${state.chakraMax}`],['⚡ Energia',`${state.stamina}/100`],['🪙 Ryō',String(state.ryo)],['📆 Dia',String(state.day)],['📍 Local',state.location]];
- $('stats').replaceChildren(...stats.map(([key,val])=>{const div=create('div','stat');div.append(create('span','',key),create('b','',val));return div;}));
- for(const [id,values] of [['techniques',state.techniques],['inventory',state.inventory]]){$(id).replaceChildren(...(values.length?values:['Nenhum ainda']).map(t=>create('span','chip'+(values.length?'':' empty'),t)));}
- const nodes=state.history.slice(-90).map(m=>{const div=create('div','message '+m.role);div.append(create('div','who',m.role==='assistant'?'✦ NARRADOR':state.hero.name),create('div','body',m.content));if(m.clock)div.append(create('div','turn-meta',`DIA ${state.day} • ${m.clock}`));return div;});
- $('messages').replaceChildren(...nodes);$('messages').scrollTop=$('messages').scrollHeight;
- save();
-}
-async function narrate(action){
- if(location.protocol==='file:')throw new Error('Edição offline');
- const response=await fetch('./api/narrate',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({state:publicState(state),history:state.history.slice(-20)}),signal:AbortSignal.timeout(22000)});
- if(!response.ok)throw new Error('IA indisponível');
- const result=await response.json();if(!result.text || typeof result.text!=='string')throw new Error('Resposta vazia');
- return result.text.slice(0,5000);
-}
-async function send(input){
- const action=input.trim();if(!action||busy)return;
- busy=true;$('send').disabled=true;document.querySelectorAll('.choices button').forEach(b=>b.disabled=true);
- 
- $('action').value='';
- state.history.push({role:'user',content:action,clock:clock()});
- // Somente regras locais atualizam status. A IA não pode distribuir itens/chakra por texto.
- const out=applyDemoAction(state,action);
- render();
- try{
-  const result=await narrate(action);
-  // A IA reescreve apenas a narração. O relógio e os recursos já foram validados localmente.
-  state.history.push({role:'assistant',content:result,clock:clock()});$('mode').textContent='IA CONECTADA';
- }catch(error){state.history.push({role:'assistant',content:out.text,clock:clock()});$('mode').textContent='DEMONSTRAÇÃO';}
- finally{busy=false;$('send').disabled=false;document.querySelectorAll('.choices button').forEach(b=>b.disabled=false);render();}
-}
-$('composer').addEventListener('submit',e=>{e.preventDefault();send($('action').value);});
-$('action').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();$('composer').requestSubmit();}});
-document.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('click',()=>send(b.dataset.action)));
-$('reset').addEventListener('click',()=>{if(busy)return;if(confirm('Recomeçar a história do episódio 1? O progresso deste dispositivo será substituído.')){state=INITIAL();$('mode').textContent='DEMONSTRAÇÃO';render();$('panel').classList.remove('open');}});
-$('menu').addEventListener('click',()=>{const open=$('panel').classList.toggle('open');$('menu').setAttribute('aria-expanded',String(open));});
-render();
-
-</script>
+<div id="scrim" class="scrim" hidden></div>
+<aside id="panel" class="panel" aria-label="Ficha do personagem" aria-hidden="true" inert>
+  <div class="panel-head"><div><div class="small-label">FICHA DO PERSONAGEM</div><h2>Henrique Uchiha</h2><p>12 anos · Konoha · Rick-138</p></div><button id="close-panel" type="button" class="icon-button" aria-label="Fechar ficha">×</button></div>
+  <section class="panel-section"><h3>Estado atual</h3><div id="stats" class="stats"></div></section>
+  <section class="panel-section"><h3>Técnicas aprendidas</h3><div id="techniques" class="tags"></div></section>
+  <section class="panel-section"><h3>Inventário</h3><div id="inventory" class="tags"></div></section>
+  <section class="panel-section"><h3>Regras do RPG</h3><p>Você decide todas as ações e falas de Henrique. Ele tem uma mente extraordinária, mas não conhece os personagens deste mundo. Aprende uma técnica após observá-la uma única vez, respeitando os limites físicos e de chakra.</p></section>
+  <section class="panel-section"><h3>Sobre o narrador</h3><p id="mode-description">Modo demonstração: respostas guiadas por regras locais. Para conversas livres como no ChatGPT, ainda é necessário conectar uma API de IA com backend seguro.</p></section>
+  <button id="reset" class="reset" type="button">↻ Recomeçar episódio 1</button>
+  <p class="disclaimer">Projeto de fã não oficial · Progresso salvo neste navegador</p>
+</aside>
+<div id="mode-dialog" class="dialog-overlay" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mode-title"><h2 id="mode-title">Sobre as respostas</h2><p id="dialog-copy">Este site está em modo demonstração. Você pode escrever qualquer ação, mas a história ainda usa respostas programadas. Uma IA real precisa de um servidor seguro e de uma chave de API, que não deve ser publicada no GitHub.</p><button type="button" id="close-dialog">Entendi</button></div></div>
 </body>
 </html>
